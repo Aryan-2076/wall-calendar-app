@@ -4,7 +4,6 @@ import React from 'react';
 
 interface ThemeToggleProps {
   isDark: boolean;
-  isLoaded: boolean;
   onToggle: () => void;
 }
 
