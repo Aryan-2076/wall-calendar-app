@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-/* Enable class-based dark mode */
-@custom-variant dark (&:where(.dark, .dark *));
+/* 🔥 REQUIRED FOR DARK MODE (VERY IMPORTANT) */
+@variant dark (&:where(.dark, .dark *));
 
 /* ═══════════════════════════════════════════════════
    Design System — Wall Calendar
@@ -24,12 +24,12 @@
 }
 
 /* ── Dark mode ── */
-[data-theme="dark"] {
+.dark {
   --background: #09090b;
   --foreground: #fafafa;
 }
 
-/* ── GLOBAL SMOOTH TRANSITIONS (🔥 MAIN UPGRADE) ── */
+/* ── GLOBAL SMOOTH TRANSITIONS ── */
 * {
   transition:
     background-color 0.4s ease,
@@ -62,12 +62,12 @@ body {
   background: #d4d4d8;
   border-radius: 999px;
 }
-[data-theme="dark"] ::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb {
   background: #3f3f46;
 }
 
 /* ═══════════════════════════════════════════════════
-   ADVANCED ANIMATIONS (🔥 PREMIUM FEEL)
+   Animations
    ═══════════════════════════════════════════════════ */
 
 @keyframes fadeIn {
@@ -92,7 +92,6 @@ body {
   }
 }
 
-/* 🔥 NEW: Slide + Fade combo */
 @keyframes slideFadeInRight {
   0% {
     opacity: 0;
@@ -126,17 +125,10 @@ body {
   }
 }
 
-@keyframes pageFlip {
-  0% { transform: perspective(800px) rotateY(0); }
-  50% { transform: perspective(800px) rotateY(-5deg); }
-  100% { transform: perspective(800px) rotateY(0); }
-}
-
 /* ═══════════════════════════════════════════════════
    Utility Classes
    ═══════════════════════════════════════════════════ */
 
-/* Glassmorphism */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px);
@@ -144,19 +136,17 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-[data-theme="dark"] .glass {
+.dark .glass {
   background: rgba(24, 24, 27, 0.6);
   border: 1px solid rgba(63, 63, 70, 0.3);
 }
 
-/* Smooth focus ring */
 *:focus-visible {
   outline: 2px solid rgba(99, 102, 241, 0.6);
   outline-offset: 2px;
   border-radius: 8px;
 }
 
-/* 🔥 Glow utility */
 .glow {
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
 }
